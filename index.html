@@ -1,221 +1,200 @@
-<!DOCTYPE html><html lang="id">
+<!DOCTYPE html>
+<html lang="id">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CV | Nama Anda</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Arief Lukman | QA Automation Engineer</title>
+
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: Arial, sans-serif;
-    }body {
-  background: #f5f7fa;
-  color: #333;
-  line-height: 1.6;
-}
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:Arial, sans-serif;
+    }
 
-.container {
-  max-width: 1000px;
-  margin: 40px auto;
-  background: white;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-}
+    body{
+      background:#0f172a;
+      color:#f1f5f9;
+      line-height:1.6;
+    }
 
-.header {
-  background: #111827;
-  color: white;
-  padding: 40px;
-  text-align: center;
-}
+    .container{
+      max-width:1100px;
+      margin:auto;
+      padding:40px 20px;
+    }
 
-.header h1 {
-  font-size: 40px;
-  margin-bottom: 10px;
-}
+    .hero{
+      text-align:center;
+      padding:60px 20px;
+    }
 
-.header p {
-  font-size: 18px;
-  color: #d1d5db;
-}
+    .hero h1{
+      font-size:48px;
+      margin-bottom:10px;
+    }
 
-.content {
-  display: grid;
-  grid-template-columns: 300px 1fr;
-}
+    .hero p{
+      color:#94a3b8;
+      font-size:18px;
+    }
 
-.sidebar {
-  background: #f3f4f6;
-  padding: 30px;
-}
+    .card{
+      background:#1e293b;
+      padding:25px;
+      border-radius:16px;
+      margin-bottom:25px;
+      box-shadow:0 4px 15px rgba(0,0,0,0.3);
+    }
 
-.main {
-  padding: 30px;
-}
+    h2{
+      margin-bottom:15px;
+      color:#38bdf8;
+    }
 
-h2 {
-  margin-bottom: 15px;
-  color: #111827;
-  border-bottom: 2px solid #e5e7eb;
-  padding-bottom: 8px;
-}
+    .skills span{
+      display:inline-block;
+      background:#334155;
+      padding:8px 14px;
+      margin:6px;
+      border-radius:20px;
+      font-size:14px;
+    }
 
-.section {
-  margin-bottom: 30px;
-}
+    .job{
+      margin-bottom:20px;
+    }
 
-ul {
-  list-style: none;
-}
+    .job h3{
+      margin-bottom:5px;
+    }
 
-ul li {
-  margin-bottom: 10px;
-}
+    .contact a{
+      color:#38bdf8;
+      text-decoration:none;
+    }
 
-.job {
-  margin-bottom: 20px;
-}
+    footer{
+      text-align:center;
+      padding:30px;
+      color:#94a3b8;
+    }
 
-.job h3 {
-  color: #1f2937;
-}
-
-.job span {
-  font-size: 14px;
-  color: #6b7280;
-}
-
-.contact a {
-  color: #2563eb;
-  text-decoration: none;
-}
-
-.skills span {
-  display: inline-block;
-  background: #e5e7eb;
-  padding: 8px 12px;
-  border-radius: 20px;
-  margin: 5px;
-  font-size: 14px;
-}
-
-footer {
-  text-align: center;
-  padding: 20px;
-  background: #111827;
-  color: white;
-  font-size: 14px;
-}
-
-@media (max-width: 768px) {
-  .content {
-    grid-template-columns: 1fr;
-  }
-}
+    @media(max-width:768px){
+      .hero h1{
+        font-size:34px;
+      }
+    }
 
   </style>
 </head>
+
 <body>
-  <div class="container">
-    <div class="header">
-      <h1>Nama Anda</h1>
-      <p>Frontend Developer | UI/UX Designer | Freelancer</p>
-    </div><div class="content">
-  <aside class="sidebar">
-    <div class="section contact">
-      <h2>Kontak</h2>
+
+<div class="container">
+
+  <section class="hero">
+    <h1>Arief Lukman, S.Kom</h1>
+    <p>QA Automation Engineer | API Test Automation | Java | Cucumber BDD</p>
+  </section>
+
+  <section class="card">
+    <h2>About Me</h2>
+    <p>
+      QA Automation Engineer dengan pengalaman lebih dari 5 tahun di industri perbankan,
+      berfokus pada pengembangan custom Java-based API automation framework,
+      database validation, performance testing, dan end-to-end transaction testing.
+    </p>
+  </section>
+
+  <section class="card">
+    <h2>Technical Skills</h2>
+
+    <div class="skills">
+      <span>Java</span>
+      <span>Cucumber BDD</span>
+      <span>API Automation</span>
+      <span>SQL Server</span>
+      <span>PostgreSQL</span>
+      <span>JMeter</span>
+      <span>Maven</span>
+      <span>Git</span>
+      <span>Postman</span>
+      <span>Splunk</span>
+      <span>ElasticSearch</span>
+      <span>Dynatrace</span>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>Experience</h2>
+
+    <div class="job">
+      <h3>Bank OCBC NISP</h3>
+      <p>QA Automation Engineer / Application Support Engineer</p>
+
       <ul>
-        <li>Email: emailanda@gmail.com</li>
-        <li>WhatsApp: +62xxxxxxxxxx</li>
-        <li>
-          GitHub:
-          <a href="https://github.com/username" target="_blank">
-            github.com/username
-          </a>
-        </li>
-        <li>
-          LinkedIn:
-          <a href="https://linkedin.com/in/username" target="_blank">
-            linkedin.com/in/username
-          </a>
-        </li>
+        <li>• Mengembangkan custom Java-based API automation framework.</li>
+        <li>• Membuat reusable executable JAR untuk regression execution.</li>
+        <li>• Database validation dan end-to-end transaction testing.</li>
+        <li>• Performance testing hingga 1000 request per 5 menit.</li>
       </ul>
     </div>
 
-    <div class="section skills">
-      <h2>Skills</h2>
-      <span>HTML</span>
-      <span>CSS</span>
-      <span>JavaScript</span>
-      <span>React</span>
-      <span>Tailwind</span>
-      <span>Figma</span>
+    <div class="job">
+      <h3>PT Inovasi Mandiri Pratama</h3>
+      <p>IT Support Engineer</p>
     </div>
 
-    <div class="section">
-      <h2>Pendidikan</h2>
-      <p><strong>Universitas Anda</strong></p>
-      <p>S1 Teknik Informatika</p>
-      <p>2020 - 2024</p>
-    </div>
-  </aside>
-
-  <main class="main">
-    <div class="section">
-      <h2>Tentang Saya</h2>
-      <p>
-        Saya adalah seorang developer yang fokus pada pembuatan website modern,
-        responsif, dan user-friendly. Berpengalaman dalam membangun aplikasi web
-        menggunakan teknologi frontend modern.
-      </p>
+    <div class="job">
+      <h3>PT DOT SYSTEM Indonesia</h3>
+      <p>Implementor</p>
     </div>
 
-    <div class="section">
-      <h2>Pengalaman Kerja</h2>
+  </section>
 
-      <div class="job">
-        <h3>Frontend Developer - PT Contoh Indonesia</h3>
-        <span>2024 - Sekarang</span>
-        <p>
-          Mengembangkan dashboard internal perusahaan menggunakan React dan Tailwind CSS.
-        </p>
-      </div>
+  <section class="card">
+    <h2>Key Achievements</h2>
 
-      <div class="job">
-        <h3>Freelance Web Designer</h3>
-        <span>2022 - 2024</span>
-        <p>
-          Mendesain dan membuat website landing page untuk UMKM dan startup lokal.
-        </p>
-      </div>
-    </div>
+    <ul>
+      <li>• 50+ API endpoints automation</li>
+      <li>• 1000+ test scenarios</li>
+      <li>• Regression execution sekitar 2 jam</li>
+      <li>• Shared helper abstraction implementation</li>
+      <li>• Batch execution engine</li>
+    </ul>
+  </section>
 
-    <div class="section">
-      <h2>Project</h2>
+  <section class="card">
+    <h2>Portfolio</h2>
 
-      <div class="job">
-        <h3>Portfolio Website</h3>
-        <p>
-          Website personal untuk menampilkan project dan pengalaman kerja.
-        </p>
-      </div>
+    <p>
+      GitHub:
+      <a href="https://github.com/arief765/api-automation-bdd-framework" target="_blank">
+        github.com/arief765/api-automation-bdd-framework
+      </a>
+    </p>
+  </section>
 
-      <div class="job">
-        <h3>E-Commerce UI</h3>
-        <p>
-          Mendesain tampilan e-commerce modern menggunakan Figma dan Tailwind CSS.
-        </p>
-      </div>
-    </div>
-  </main>
+  <section class="card contact">
+    <h2>Contact</h2>
+
+    <p>Email: arieflukmaan@gmail.com</p>
+
+    <p>
+      LinkedIn:
+      <a href="https://linkedin.com/in/arieflukman765" target="_blank">
+        linkedin.com/in/arieflukman765
+      </a>
+    </p>
+  </section>
+
 </div>
 
 <footer>
-  © 2026 Nama Anda - CV GitHub Pages
+  © 2026 Arief Lukman
 </footer>
 
-  </div>
 </body>
 </html>
