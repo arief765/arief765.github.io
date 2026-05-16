@@ -1,73 +1,239 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Arief Lukman | QA Automation Engineer</title>
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
   <style>
+
     *{
       margin:0;
       padding:0;
       box-sizing:border-box;
-      font-family:Arial, sans-serif;
+      font-family:'Poppins', sans-serif;
+      scroll-behavior:smooth;
     }
 
     body{
       background:#0f172a;
-      color:#f1f5f9;
-      line-height:1.6;
+      color:white;
+      overflow-x:hidden;
+    }
+
+    body::before{
+      content:'';
+      position:fixed;
+      width:500px;
+      height:500px;
+      background:#0ea5e9;
+      filter:blur(180px);
+      top:-200px;
+      right:-150px;
+      opacity:0.25;
+      z-index:-1;
+    }
+
+    body::after{
+      content:'';
+      position:fixed;
+      width:400px;
+      height:400px;
+      background:#8b5cf6;
+      filter:blur(180px);
+      bottom:-150px;
+      left:-150px;
+      opacity:0.25;
+      z-index:-1;
     }
 
     .container{
-      max-width:1100px;
+      width:90%;
+      max-width:1200px;
       margin:auto;
-      padding:40px 20px;
     }
 
+    /* HERO */
+
     .hero{
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
       text-align:center;
-      padding:60px 20px;
+      position:relative;
+    }
+
+    .hero-content{
+      animation:fadeUp 1s ease;
+    }
+
+    .profile-img{
+      width:180px;
+      height:180px;
+      border-radius:50%;
+      object-fit:cover;
+      border:5px solid rgba(255,255,255,0.15);
+      margin-bottom:25px;
+      box-shadow:0 10px 40px rgba(14,165,233,0.4);
+      transition:0.4s;
+    }
+
+    .profile-img:hover{
+      transform:scale(1.05);
     }
 
     .hero h1{
-      font-size:48px;
+      font-size:58px;
+      font-weight:700;
       margin-bottom:10px;
     }
 
+    .hero h2{
+      color:#38bdf8;
+      font-weight:400;
+      margin-bottom:20px;
+      font-size:24px;
+    }
+
     .hero p{
-      color:#94a3b8;
-      font-size:18px;
+      max-width:750px;
+      margin:auto;
+      color:#cbd5e1;
+      line-height:1.8;
+      font-size:16px;
     }
 
-    .card{
-      background:#1e293b;
-      padding:25px;
-      border-radius:16px;
-      margin-bottom:25px;
-      box-shadow:0 4px 15px rgba(0,0,0,0.3);
+    .btn-group{
+      margin-top:35px;
     }
 
-    h2{
-      margin-bottom:15px;
+    .btn{
+      display:inline-block;
+      padding:14px 30px;
+      border-radius:12px;
+      text-decoration:none;
+      margin:10px;
+      transition:0.3s;
+      font-weight:600;
+    }
+
+    .btn-primary{
+      background:#0ea5e9;
+      color:white;
+    }
+
+    .btn-primary:hover{
+      background:#0284c7;
+      transform:translateY(-3px);
+    }
+
+    .btn-outline{
+      border:1px solid #38bdf8;
       color:#38bdf8;
     }
 
-    .skills span{
-      display:inline-block;
-      background:#334155;
-      padding:8px 14px;
-      margin:6px;
-      border-radius:20px;
-      font-size:14px;
+    .btn-outline:hover{
+      background:#38bdf8;
+      color:white;
+      transform:translateY(-3px);
     }
 
-    .job{
-      margin-bottom:20px;
+    /* SECTION */
+
+    section{
+      padding:80px 0;
+    }
+
+    .section-title{
+      text-align:center;
+      font-size:38px;
+      margin-bottom:50px;
+      position:relative;
+    }
+
+    .section-title::after{
+      content:'';
+      width:80px;
+      height:4px;
+      background:#38bdf8;
+      position:absolute;
+      bottom:-15px;
+      left:50%;
+      transform:translateX(-50%);
+      border-radius:10px;
+    }
+
+    /* CARD */
+
+    .card{
+      background:rgba(30,41,59,0.75);
+      backdrop-filter:blur(12px);
+      border:1px solid rgba(255,255,255,0.08);
+      border-radius:24px;
+      padding:35px;
+      transition:0.4s;
+      box-shadow:0 10px 30px rgba(0,0,0,0.25);
+    }
+
+    .card:hover{
+      transform:translateY(-8px);
+      border-color:#38bdf8;
+    }
+
+    /* SKILLS */
+
+    .skills-grid{
+      display:flex;
+      flex-wrap:wrap;
+      gap:15px;
+      justify-content:center;
+    }
+
+    .skill{
+      background:#1e293b;
+      padding:14px 22px;
+      border-radius:50px;
+      border:1px solid rgba(255,255,255,0.08);
+      transition:0.3s;
+    }
+
+    .skill:hover{
+      background:#0ea5e9;
+      transform:translateY(-4px);
+    }
+
+    /* EXPERIENCE */
+
+    .timeline{
+      display:flex;
+      flex-direction:column;
+      gap:25px;
     }
 
     .job h3{
-      margin-bottom:5px;
+      color:#38bdf8;
+      margin-bottom:8px;
+    }
+
+    .job p{
+      color:#cbd5e1;
+      margin-bottom:10px;
+    }
+
+    .job ul{
+      padding-left:20px;
+      color:#e2e8f0;
+      line-height:1.8;
+    }
+
+    /* CONTACT */
+
+    .contact{
+      text-align:center;
     }
 
     .contact a{
@@ -75,16 +241,63 @@
       text-decoration:none;
     }
 
+    .contact-links{
+      margin-top:25px;
+    }
+
+    .contact-links a{
+      display:inline-block;
+      margin:10px;
+      padding:12px 22px;
+      border-radius:12px;
+      background:#1e293b;
+      transition:0.3s;
+    }
+
+    .contact-links a:hover{
+      background:#0ea5e9;
+      transform:translateY(-4px);
+    }
+
     footer{
+      padding:40px;
       text-align:center;
-      padding:30px;
       color:#94a3b8;
+      border-top:1px solid rgba(255,255,255,0.08);
+    }
+
+    /* ANIMATION */
+
+    @keyframes fadeUp{
+      from{
+        opacity:0;
+        transform:translateY(40px);
+      }
+      to{
+        opacity:1;
+        transform:translateY(0);
+      }
     }
 
     @media(max-width:768px){
+
       .hero h1{
-        font-size:34px;
+        font-size:38px;
       }
+
+      .hero h2{
+        font-size:18px;
+      }
+
+      .profile-img{
+        width:140px;
+        height:140px;
+      }
+
+      .section-title{
+        font-size:30px;
+      }
+
     }
 
   </style>
@@ -92,109 +305,185 @@
 
 <body>
 
-<div class="container">
+  <!-- HERO -->
 
   <section class="hero">
-    <h1>Arief Lukman, S.Kom</h1>
-    <p>QA Automation Engineer | API Test Automation | Java | Cucumber BDD</p>
-  </section>
+    <div class="container">
+      <div class="hero-content">
 
-  <section class="card">
-    <h2>About Me</h2>
-    <p>
-      QA Automation Engineer dengan pengalaman lebih dari 5 tahun di industri perbankan,
-      berfokus pada pengembangan custom Java-based API automation framework,
-      database validation, performance testing, dan end-to-end transaction testing.
-    </p>
-  </section>
+        <!-- GANTI FOTO -->
+        <img src="https://i.imgur.com/YOURPHOTO.jpg"
+             class="profile-img"
+             alt="Arief Lukman">
 
-  <section class="card">
-    <h2>Technical Skills</h2>
+        <h1>Arief Lukman, S.Kom</h1>
 
-    <div class="skills">
-      <span>Java</span>
-      <span>Cucumber BDD</span>
-      <span>API Automation</span>
-      <span>SQL Server</span>
-      <span>PostgreSQL</span>
-      <span>JMeter</span>
-      <span>Maven</span>
-      <span>Git</span>
-      <span>Postman</span>
-      <span>Splunk</span>
-      <span>ElasticSearch</span>
-      <span>Dynatrace</span>
+        <h2>
+          QA Automation Engineer • API Automation • Java • Cucumber BDD
+        </h2>
+
+        <p>
+          QA Automation Engineer dengan pengalaman lebih dari 5 tahun
+          di industri perbankan. Berfokus pada pengembangan custom
+          Java-based API automation framework, performance testing,
+          database validation, dan end-to-end transaction orchestration.
+        </p>
+
+        <div class="btn-group">
+
+          <a href="mailto:arieflukmaan@gmail.com"
+             class="btn btn-primary">
+             Contact Me
+          </a>
+
+          <a href="https://github.com/arief765/api-automation-bdd-framework"
+             target="_blank"
+             class="btn btn-outline">
+             GitHub Project
+          </a>
+
+        </div>
+
+      </div>
     </div>
   </section>
 
-  <section class="card">
-    <h2>Experience</h2>
+  <!-- SKILLS -->
 
-    <div class="job">
-      <h3>Bank OCBC NISP</h3>
-      <p>QA Automation Engineer / Application Support Engineer</p>
+  <section>
+    <div class="container">
 
-      <ul>
-        <li>• Mengembangkan custom Java-based API automation framework.</li>
-        <li>• Membuat reusable executable JAR untuk regression execution.</li>
-        <li>• Database validation dan end-to-end transaction testing.</li>
-        <li>• Performance testing hingga 1000 request per 5 menit.</li>
-      </ul>
+      <h2 class="section-title">Technical Skills</h2>
+
+      <div class="card">
+
+        <div class="skills-grid">
+
+          <div class="skill">Java</div>
+          <div class="skill">API Automation</div>
+          <div class="skill">Cucumber BDD</div>
+          <div class="skill">Regression Testing</div>
+          <div class="skill">Postman</div>
+          <div class="skill">SQL Server</div>
+          <div class="skill">PostgreSQL</div>
+          <div class="skill">JMeter</div>
+          <div class="skill">Splunk</div>
+          <div class="skill">ElasticSearch</div>
+          <div class="skill">Dynatrace</div>
+          <div class="skill">Maven</div>
+          <div class="skill">Git</div>
+
+        </div>
+
+      </div>
+
     </div>
+  </section>
 
-    <div class="job">
-      <h3>PT Inovasi Mandiri Pratama</h3>
-      <p>IT Support Engineer</p>
+  <!-- EXPERIENCE -->
+
+  <section>
+    <div class="container">
+
+      <h2 class="section-title">Experience</h2>
+
+      <div class="timeline">
+
+        <div class="card job">
+
+          <h3>Bank OCBC NISP</h3>
+
+          <p>
+            QA Automation Engineer / Application Support Engineer
+          </p>
+
+          <ul>
+            <li>Developed custom Java-based API automation framework.</li>
+            <li>Implemented reusable executable JAR regression execution.</li>
+            <li>Handled database validation and transaction orchestration.</li>
+            <li>Executed performance testing up to 1000 requests / 5 minutes.</li>
+          </ul>
+
+        </div>
+
+        <div class="card job">
+
+          <h3>PT Inovasi Mandiri Pratama</h3>
+
+          <p>IT Support Engineer</p>
+
+        </div>
+
+        <div class="card job">
+
+          <h3>PT DOT SYSTEM Indonesia</h3>
+
+          <p>Implementor</p>
+
+        </div>
+
+      </div>
+
     </div>
+  </section>
 
-    <div class="job">
-      <h3>PT DOT SYSTEM Indonesia</h3>
-      <p>Implementor</p>
+  <!-- ACHIEVEMENTS -->
+
+  <section>
+    <div class="container">
+
+      <h2 class="section-title">Achievements</h2>
+
+      <div class="card">
+
+        <ul style="line-height:2; padding-left:20px;">
+
+          <li>50+ API endpoints automation coverage</li>
+          <li>1000+ automated test scenarios</li>
+          <li>Regression execution reduced to around 2 hours</li>
+          <li>Built reusable shared helper abstraction layer</li>
+          <li>Created batch execution engine</li>
+
+        </ul>
+
+      </div>
+
     </div>
-
   </section>
 
-  <section class="card">
-    <h2>Key Achievements</h2>
+  <!-- CONTACT -->
 
-    <ul>
-      <li>• 50+ API endpoints automation</li>
-      <li>• 1000+ test scenarios</li>
-      <li>• Regression execution sekitar 2 jam</li>
-      <li>• Shared helper abstraction implementation</li>
-      <li>• Batch execution engine</li>
-    </ul>
+  <section>
+    <div class="container">
+
+      <h2 class="section-title">Contact</h2>
+
+      <div class="card contact">
+
+        <p>Email: arieflukmaan@gmail.com</p>
+
+        <div class="contact-links">
+
+          <a href="https://linkedin.com/in/arieflukman765"
+             target="_blank">
+             LinkedIn
+          </a>
+
+          <a href="https://github.com/arief765"
+             target="_blank">
+             GitHub
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
   </section>
 
-  <section class="card">
-    <h2>Portfolio</h2>
-
-    <p>
-      GitHub:
-      <a href="https://github.com/arief765/api-automation-bdd-framework" target="_blank">
-        github.com/arief765/api-automation-bdd-framework
-      </a>
-    </p>
-  </section>
-
-  <section class="card contact">
-    <h2>Contact</h2>
-
-    <p>Email: arieflukmaan@gmail.com</p>
-
-    <p>
-      LinkedIn:
-      <a href="https://linkedin.com/in/arieflukman765" target="_blank">
-        linkedin.com/in/arieflukman765
-      </a>
-    </p>
-  </section>
-
-</div>
-
-<footer>
-  © 2026 Arief Lukman
-</footer>
+  <footer>
+    © 2026 Arief Lukman — QA Automation Engineer
+  </footer>
 
 </body>
 </html>
