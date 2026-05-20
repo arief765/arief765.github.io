@@ -1,4 +1,6 @@
+// =========================
 // HAMBURGER MENU
+// =========================
 
 const toggle =
   document.getElementById('menu-toggle');
@@ -12,7 +14,9 @@ toggle.addEventListener('click', () => {
 
 });
 
-// CLOSE MENU AFTER CLICK MOBILE
+// =========================
+// CLOSE MENU AFTER CLICK
+// =========================
 
 const navItems =
   document.querySelectorAll('.nav-links a');
@@ -27,7 +31,9 @@ navItems.forEach(item => {
 
 });
 
-// NAVBAR SHADOW ON SCROLL
+// =========================
+// NAVBAR SCROLL EFFECT
+// =========================
 
 const navbar =
   document.querySelector('.navbar');
@@ -36,29 +42,23 @@ window.addEventListener('scroll', () => {
 
   if(window.scrollY > 20){
 
-    navbar.style.background =
-      'rgba(15,23,42,0.95)';
-
-    navbar.style.boxShadow =
-      '0 8px 30px rgba(0,0,0,0.35)';
+    navbar.classList.add('scrolled');
 
   } else {
 
-    navbar.style.background =
-      'rgba(15,23,42,0.75)';
-
-    navbar.style.boxShadow =
-      '0 4px 30px rgba(0,0,0,0.2)';
+    navbar.classList.remove('scrolled');
 
   }
 
 });
 
-// SIMPLE SCROLL REVEAL
+// =========================
+// SCROLL REVEAL ANIMATION
+// =========================
 
 const revealElements =
   document.querySelectorAll(
-    '.card, .hero-content, .section-title'
+    '.card, .hero-content, .section-title, .stat-card'
   );
 
 function revealOnScroll(){
@@ -106,3 +106,80 @@ window.addEventListener(
 );
 
 revealOnScroll();
+
+// =========================
+// ACTIVE NAVBAR LINK
+// =========================
+
+const sections =
+  document.querySelectorAll('section');
+
+const navAnchor =
+  document.querySelectorAll('.nav-links a');
+
+window.addEventListener('scroll', () => {
+
+  let current = '';
+
+  sections.forEach(section => {
+
+    const sectionTop =
+      section.offsetTop - 150;
+
+    const sectionHeight =
+      section.clientHeight;
+
+    if(pageYOffset >= sectionTop){
+
+      current = section.getAttribute('id');
+
+    }
+
+  });
+
+  navAnchor.forEach(a => {
+
+    a.classList.remove('active-link');
+
+    if(
+      a.getAttribute('href') ===
+      `#${current}`
+    ){
+
+      a.classList.add('active-link');
+
+    }
+
+  });
+
+});
+
+// =========================
+// SMOOTH HERO IMAGE EFFECT
+// =========================
+
+const profileImg =
+  document.querySelector('.profile-img');
+
+window.addEventListener('mousemove', (e) => {
+
+  const x =
+    (window.innerWidth / 2 - e.pageX) / 40;
+
+  const y =
+    (window.innerHeight / 2 - e.pageY) / 40;
+
+  profileImg.style.transform =
+    `translate(${x}px, ${y}px)`;
+
+});
+
+// =========================
+// PRELOADER FADE
+// =========================
+
+window.addEventListener('load', () => {
+
+  document.body.classList.add('loaded');
+
+});
