@@ -2,20 +2,29 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Arief Lukman | QA Automation Engineer</title>
+  <meta charset="UTF-8" />
+
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0"/>
+
+  <title>
+    Arief Lukman | QA Automation Engineer
+  </title>
 
   <!-- GOOGLE FONT -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
+
+  <link rel="preconnect"
+        href="https://fonts.googleapis.com">
+
   <link
     href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
     rel="stylesheet">
 
   <!-- FONT AWESOME -->
+
   <link rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
 
   <style>
 
@@ -46,10 +55,13 @@
       height:500px;
       background:#0ea5e9;
       filter:blur(180px);
+
       top:-200px;
       right:-150px;
+
       opacity:0.25;
       z-index:-1;
+
       animation:moveGlow 8s infinite alternate;
     }
 
@@ -60,13 +72,16 @@
       height:400px;
       background:#8b5cf6;
       filter:blur(180px);
+
       bottom:-150px;
       left:-150px;
+
       opacity:0.25;
       z-index:-1;
     }
 
     @keyframes moveGlow{
+
       from{
         transform:translateY(0);
       }
@@ -74,6 +89,7 @@
       to{
         transform:translateY(60px);
       }
+
     }
 
     .container{
@@ -85,24 +101,36 @@
     /* NAVBAR */
 
     .navbar{
+
       position:fixed;
       top:0;
+      left:0;
+
       width:100%;
+
       padding:20px 8%;
+
       display:flex;
       justify-content:space-between;
       align-items:center;
+
       background:rgba(15,23,42,0.75);
+
       backdrop-filter:blur(12px);
+
       z-index:1000;
+
       border-bottom:1px solid rgba(255,255,255,0.08);
+
       box-shadow:0 4px 30px rgba(0,0,0,0.2);
+
     }
 
     .logo{
       font-size:24px;
       font-weight:700;
       color:white;
+      white-space:nowrap;
     }
 
     .navbar ul{
@@ -116,6 +144,7 @@
       text-decoration:none;
       transition:0.3s;
       font-weight:500;
+      white-space:nowrap;
     }
 
     .navbar a:hover{
@@ -125,146 +154,245 @@
     /* HERO */
 
     .hero{
-      min-height:100vh;
+
+      min-height:auto;
+
+      padding-top:160px;
+      padding-bottom:100px;
+
       display:flex;
       align-items:center;
       justify-content:center;
+
       text-align:center;
       position:relative;
-      padding-top:120px;
+
     }
 
     .hero-content{
+
+      width:100%;
+      max-width:900px;
+
+      margin:auto;
+
       animation:fadeUp 1s ease;
+
     }
 
     .tag{
+
       display:inline-block;
+
       background:rgba(14,165,233,0.15);
+
       color:#38bdf8;
+
       padding:10px 20px;
+
       border-radius:30px;
+
       margin-bottom:25px;
+
       border:1px solid rgba(56,189,248,0.3);
+
+      font-size:14px;
+
     }
 
     .profile-img{
+
       width:190px;
       height:190px;
+
       border-radius:50%;
+
       object-fit:cover;
+
+      display:block;
+
+      margin:0 auto 30px auto;
+
       border:4px solid rgba(255,255,255,0.15);
-      margin-bottom:30px;
+
       box-shadow:
         0 0 25px rgba(14,165,233,0.6),
         0 0 60px rgba(14,165,233,0.3);
+
       transition:0.5s;
+
       animation:float 4s ease-in-out infinite;
+
     }
 
     .profile-img:hover{
-      transform:scale(1.06) rotate(2deg);
+      transform:scale(1.05);
     }
 
     @keyframes float{
+
       0%{
         transform:translateY(0px);
       }
+
       50%{
         transform:translateY(-10px);
       }
+
       100%{
         transform:translateY(0px);
       }
+
     }
 
     .hero h1{
+
       font-size:64px;
       font-weight:700;
+
       margin-bottom:15px;
+
       line-height:1.2;
+
     }
 
     .hero h2{
+
       color:#38bdf8;
+
       font-weight:400;
+
       margin-bottom:25px;
+
       font-size:28px;
+
+      line-height:1.5;
+
     }
 
     .hero p{
+
       max-width:800px;
+
       margin:auto;
+
       color:#cbd5e1;
+
       line-height:1.9;
+
       font-size:17px;
+
     }
+
+    /* BUTTON */
 
     .btn-group{
       margin-top:40px;
     }
 
     .btn{
+
       display:inline-block;
+
       padding:15px 32px;
+
       border-radius:14px;
+
       text-decoration:none;
+
       margin:10px;
+
       transition:0.3s;
+
       font-weight:600;
+
     }
 
     .btn-primary{
+
       background:#0ea5e9;
       color:white;
+
       box-shadow:0 10px 30px rgba(14,165,233,0.35);
+
     }
 
     .btn-primary:hover{
+
       background:#0284c7;
+
       transform:translateY(-4px);
+
     }
 
     .btn-outline{
+
       border:1px solid #38bdf8;
+
       color:#38bdf8;
+
     }
 
     .btn-outline:hover{
+
       background:#38bdf8;
+
       color:white;
+
       transform:translateY(-4px);
+
     }
 
     /* STATS */
 
     .stats{
+
       display:flex;
+
       justify-content:center;
+
       gap:20px;
+
       flex-wrap:wrap;
+
       margin-top:60px;
+
     }
 
     .stat-card{
+
       background:rgba(30,41,59,0.8);
+
       padding:30px;
+
       border-radius:24px;
+
       min-width:200px;
+
       border:1px solid rgba(255,255,255,0.08);
+
       backdrop-filter:blur(10px);
+
       transition:0.4s;
+
     }
 
     .stat-card:hover{
+
       transform:translateY(-6px);
+
       border-color:#38bdf8;
+
     }
 
     .stat-card h3{
+
       font-size:38px;
+
       color:#38bdf8;
+
       margin-bottom:10px;
+
     }
 
     /* SECTION */
@@ -274,86 +402,139 @@
     }
 
     .section-title{
+
       text-align:center;
+
       font-size:42px;
+
       margin-bottom:60px;
+
       position:relative;
+
     }
 
     .section-title::after{
+
       content:'';
+
       width:90px;
       height:4px;
+
       background:#38bdf8;
+
       position:absolute;
+
       bottom:-18px;
       left:50%;
+
       transform:translateX(-50%);
+
       border-radius:10px;
+
     }
 
     /* CARD */
 
     .card{
+
       background:rgba(30,41,59,0.75);
+
       backdrop-filter:blur(12px);
+
       border:1px solid rgba(255,255,255,0.08);
+
       border-radius:28px;
+
       padding:40px;
+
       transition:0.4s;
+
       box-shadow:0 10px 30px rgba(0,0,0,0.25);
+
     }
 
     .card:hover{
+
       transform:translateY(-8px);
+
       border-color:#38bdf8;
+
     }
 
     /* SKILLS */
 
     .skills-grid{
+
       display:flex;
+
       flex-wrap:wrap;
+
       gap:16px;
+
       justify-content:center;
+
     }
 
     .skill{
+
       background:#1e293b;
+
       padding:14px 24px;
+
       border-radius:50px;
+
       border:1px solid rgba(255,255,255,0.08);
+
       transition:0.3s;
+
     }
 
     .skill:hover{
+
       background:#0ea5e9;
+
       transform:translateY(-4px);
+
     }
 
     /* EXPERIENCE */
 
     .timeline{
+
       display:flex;
+
       flex-direction:column;
+
       gap:30px;
+
     }
 
     .job h3{
+
       color:#38bdf8;
+
       margin-bottom:10px;
+
       font-size:24px;
+
     }
 
     .job p{
+
       color:#cbd5e1;
+
       margin-bottom:15px;
+
     }
 
     .job ul{
+
       padding-left:20px;
+
       color:#e2e8f0;
+
       line-height:2;
+
     }
 
     /* CONTACT */
@@ -363,8 +544,11 @@
     }
 
     .contact p{
+
       margin-bottom:15px;
+
       color:#cbd5e1;
+
     }
 
     .contact-links{
@@ -372,39 +556,59 @@
     }
 
     .contact-links a{
+
       display:inline-block;
+
       margin:10px;
+
       padding:14px 24px;
+
       border-radius:14px;
+
       background:#1e293b;
+
       transition:0.3s;
+
       color:white;
+
       text-decoration:none;
+
     }
 
     .contact-links a:hover{
+
       background:#0ea5e9;
+
       transform:translateY(-4px);
+
     }
 
     footer{
+
       padding:40px;
+
       text-align:center;
+
       color:#94a3b8;
+
       border-top:1px solid rgba(255,255,255,0.08);
+
     }
 
     /* ANIMATION */
 
     @keyframes fadeUp{
+
       from{
         opacity:0;
         transform:translateY(40px);
       }
+
       to{
         opacity:1;
         transform:translateY(0);
       }
+
     }
 
     /* MOBILE */
@@ -412,56 +616,97 @@
     @media(max-width:768px){
 
       .navbar{
+
         padding:15px 5%;
+
         overflow-x:auto;
+
+        gap:15px;
+
       }
 
       .logo{
+
         font-size:18px;
-        min-width:100px;
+
+        min-width:120px;
+
       }
 
       .navbar ul{
+
         gap:14px;
+
       }
 
       .navbar a{
+
         font-size:14px;
+
         white-space:nowrap;
+
       }
 
       .hero{
+
         padding-top:140px;
+        padding-bottom:80px;
+
       }
 
       .hero h1{
+
         font-size:42px;
+
       }
 
       .hero h2{
+
         font-size:20px;
+
       }
 
       .hero p{
+
         font-size:15px;
+
       }
 
       .profile-img{
+
         width:150px;
         height:150px;
+
       }
 
       .section-title{
+
         font-size:32px;
+
       }
 
       .card{
+
         padding:28px;
+
+      }
+
+      .stats{
+
+        flex-direction:column;
+        align-items:center;
+
+      }
+
+      .stat-card{
+        width:100%;
+        max-width:280px;
       }
 
     }
 
   </style>
+
 </head>
 
 <body>
@@ -475,17 +720,39 @@
     </div>
 
     <ul>
-      <li><a href="#about">About</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#experience">Experience</a></li>
-      <li><a href="#contact">Contact</a></li>
+
+      <li>
+        <a href="#about">
+          About
+        </a>
+      </li>
+
+      <li>
+        <a href="#skills">
+          Skills
+        </a>
+      </li>
+
+      <li>
+        <a href="#experience">
+          Experience
+        </a>
+      </li>
+
+      <li>
+        <a href="#contact">
+          Contact
+        </a>
+      </li>
+
     </ul>
 
   </nav>
 
   <!-- HERO -->
 
-  <section class="hero" id="about">
+  <section class="hero"
+           id="about">
 
     <div class="container">
 
@@ -496,6 +763,7 @@
         </span>
 
         <!-- FOTO -->
+
         <img src="profile.png"
              class="profile-img"
              alt="Arief Lukman">
@@ -509,23 +777,34 @@
         </h2>
 
         <p>
-          QA Automation Engineer dengan pengalaman lebih dari 5 tahun
-          di industri perbankan. Berfokus pada pengembangan custom
-          Java-based API automation framework, performance testing,
-          database validation, dan end-to-end transaction orchestration.
+
+          Technical QA Automation Engineer dengan pengalaman lebih dari 5 tahun di industri perbankan, mencakup application support, system troubleshooting, dan API automation.
+
+Memulai karier di bidang application support dengan menangani analisis transaction flow, investigasi issue, validasi SQL, serta production support untuk aplikasi enterprise banking.
+
+Saat ini berfokus pada pengembangan API automation framework menggunakan Java dan Cucumber BDD, termasuk reusable framework architecture, data-driven testing, automated reporting, dan end-to-end transaction validation.
+
+Berpengalaman dalam workflow sistem perbankan, API testing, database validation, serta pengembangan scalable automation solution untuk enterprise systems.
+
         </p>
+
+        <!-- BUTTON -->
 
         <div class="btn-group">
 
           <a href="mailto:arieflukmaan@gmail.com"
              class="btn btn-primary">
+
              Contact Me
+
           </a>
 
           <a href="https://github.com/arief765/api-automation-bdd-framework"
              target="_blank"
              class="btn btn-outline">
+
              GitHub Project
+
           </a>
 
         </div>
@@ -535,18 +814,33 @@
         <div class="stats">
 
           <div class="stat-card">
+
             <h3>5+</h3>
-            <p>Years Experience</p>
+
+            <p>
+              Years Experience
+            </p>
+
           </div>
 
           <div class="stat-card">
+
             <h3>50+</h3>
-            <p>API Endpoints</p>
+
+            <p>
+              API Endpoints
+            </p>
+
           </div>
 
           <div class="stat-card">
+
             <h3>1000+</h3>
-            <p>Test Scenarios</p>
+
+            <p>
+              Test Scenarios
+            </p>
+
           </div>
 
         </div>
@@ -616,10 +910,23 @@
           </p>
 
           <ul>
-            <li>Developed custom Java-based API automation framework.</li>
-            <li>Implemented reusable executable JAR regression execution.</li>
-            <li>Handled database validation and transaction orchestration.</li>
-            <li>Executed performance testing up to 1000 requests / 5 minutes.</li>
+
+            <li>
+              Developed custom Java-based API automation framework.
+            </li>
+
+            <li>
+              Implemented reusable executable JAR regression execution.
+            </li>
+
+            <li>
+              Handled database validation and transaction orchestration.
+            </li>
+
+            <li>
+              Executed performance testing up to 1000 requests / 5 minutes.
+            </li>
+
           </ul>
 
         </div>
@@ -667,13 +974,19 @@
       <div class="card contact">
 
         <p>
+
           <i class="fa-solid fa-envelope"></i>
+
           arieflukmaan@gmail.com
+
         </p>
 
         <p>
+
           <i class="fa-solid fa-location-dot"></i>
+
           Bandung, Indonesia
+
         </p>
 
         <div class="contact-links">
@@ -682,6 +995,7 @@
              target="_blank">
 
             <i class="fa-brands fa-linkedin"></i>
+
             LinkedIn
 
           </a>
@@ -690,6 +1004,7 @@
              target="_blank">
 
             <i class="fa-brands fa-github"></i>
+
             GitHub
 
           </a>
@@ -705,8 +1020,11 @@
   <!-- FOOTER -->
 
   <footer>
+
     © 2026 Arief Lukman — QA Automation Engineer
+
   </footer>
 
 </body>
+
 </html>
