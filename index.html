@@ -318,10 +318,47 @@
       }
 
     }
+    .navbar{
+  position:fixed;
+  top:0;
+  width:100%;
+  padding:20px 8%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  background:rgba(15,23,42,0.7);
+  backdrop-filter:blur(10px);
+  z-index:1000;
+}
+
+.navbar ul{
+  display:flex;
+  gap:25px;
+  list-style:none;
+}
+
+.navbar a{
+  color:white;
+  text-decoration:none;
+  transition:0.3s;
+}
+
+.navbar a:hover{
+  color:#38bdf8;
+}
 
   </style>
 </head>
+<nav class="navbar">
+  <div class="logo">Arief Lukman</div>
 
+  <ul>
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
 <body>
 
   <!-- HERO -->
