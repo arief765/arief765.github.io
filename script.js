@@ -231,25 +231,8 @@ reader.onload = async () => {
         }  
       );  
 
-    const result =  
-      await response.json();  
-
-    if(result.success){  
-
-      fileName.innerHTML =  
-        `✅ Uploaded:  
-        <a href="${result.url}"  
-           target="_blank">  
-           View File  
-        </a>`;  
-
-    } else {  
-
-      fileName.textContent =  
-        '❌ Upload gagal: ' +  
-        result.error;  
-
-    }  
+    fileName.innerHTML =
+  '✅ Upload berhasil. Silakan cek folder Google Drive.';
 
   } catch(err){  
 
