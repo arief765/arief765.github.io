@@ -232,7 +232,7 @@ reader.onload = async () => {
       );  
 
     fileName.innerHTML =
-  '✅ Upload berhasil. Silakan cek folder Google Drive.';
+  '✅ Upload berhasil. Silakan cek di folder.';
 
   } catch(err){  
 
