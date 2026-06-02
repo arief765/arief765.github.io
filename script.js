@@ -222,9 +222,7 @@ uploadInput.addEventListener(
             'https://script.google.com/macros/s/AKfycbwSXLsfwKzSaH8ZldheRJcnvds74KLsvyFE3iUqxn36bpO6T30wYYs2f_ZHoHsrjdT0LA/exec',
             {
               method:'POST',
-              headers:{
-                'Content-Type':'application/json'
-              },
+              mode: 'no-cors',
               body:JSON.stringify({
                 file:base64,
                 fileName:file.name,
