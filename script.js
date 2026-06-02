@@ -187,62 +187,93 @@ window.addEventListener('load', () => {
 // =========================
 // FILE UPLOAD NAME
 // =========================
+
+const ACCESS_CODE = 'QA2026';
+
 const uploadInput =
-document.getElementById('file-upload');
+  document.getElementById('file-upload');
 
 const fileName =
-document.getElementById('file-name');
+  document.getElementById('file-name');
+
+const progressBar =
+  document.getElementById('progress-bar');
+
+const passwordInput =
+  document.getElementById('upload-password');
 
 uploadInput.addEventListener(
-'change',
-async () => {
+  'change',
+  async () => {
 
-const file =  
-  uploadInput.files[0];  
+    if(
+      passwordInput.value !==
+      ACCESS_CODE
+    ){
 
-if(!file) return;  
+      fileName.innerHTML =
+        '❌ Access Code salah';
 
-fileName.textContent =  
-  'Uploading...';  
+      uploadInput.value = '';
 
-const reader =  
-  new FileReader();  
+      return;
+    }
 
-reader.readAsDataURL(file);  
+    const file =
+      uploadInput.files[0];
 
-reader.onload = async () => {  
-
-  try {  
-
-    const base64 =  
-      reader.result.split(',')[1];  
-
-    const response =  
-      await fetch(  
-        'https://script.google.com/macros/s/AKfycbwSXLsfwKzSaH8ZldheRJcnvds74KLsvyFE3iUqxn36bpO6T30wYYs2f_ZHoHsrjdT0LA/exec',  
-        {  
-          method:'POST',  
-          mode: 'no-cors',  
-          body:JSON.stringify({  
-            file:base64,  
-            fileName:file.name,  
-            mimeType:file.type  
-          })  
-        }  
-      );  
+    if(!file) return;
 
     fileName.innerHTML =
-  '✅ Upload berhasil. Silakan cek di folder.';
+      '⏳ Uploading...';
 
-  } catch(err){  
+    progressBar.style.width =
+      '15%';
 
-    console.error(err);  
+    const reader =
+      new FileReader();
 
-    fileName.textContent =  
-      '❌ Error Upload';  
+    reader.readAsDataURL(file);
 
-  }  
+    reader.onload = async () => {
 
-};
+      try {
+
+        progressBar.style.width =
+          '70%';
+
+        const base64 =
+          reader.result.split(',')[1];
+
+        await fetch(
+          'YOUR_GOOGLE_SCRIPT_URL',
+          {
+            method:'POST',
+            mode:'no-cors',
+            body:JSON.stringify({
+              file:base64,
+              fileName:file.name,
+              mimeType:file.type
+            })
+          }
+        );
+
+        progressBar.style.width =
+          '100%';
+
+        fileName.innerHTML =
+          `✅ Upload berhasil<br>${file.name}`;
+
+      } catch(err){
+
+        progressBar.style.width =
+          '0%';
+
+        fileName.innerHTML =
+          '❌ Upload gagal';
+
+      }
+
+    };
 
 });
