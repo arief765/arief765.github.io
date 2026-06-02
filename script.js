@@ -183,3 +183,33 @@ window.addEventListener('load', () => {
   document.body.classList.add('loaded');
 
 });
+
+// =========================
+// FILE UPLOAD NAME
+// =========================
+
+const fileUpload =
+  document.getElementById('file-upload');
+
+const fileName =
+  document.getElementById('file-name');
+
+fileUpload.addEventListener('change', () => {
+
+  if(fileUpload.files.length > 0){
+
+    const names =
+      Array.from(fileUpload.files)
+      .map(file => file.name)
+      .join(', ');
+
+    fileName.textContent = names;
+
+  } else {
+
+    fileName.textContent =
+      'Belum ada file dipilih';
+
+  }
+
+});
