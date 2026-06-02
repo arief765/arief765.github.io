@@ -219,7 +219,7 @@ uploadInput.addEventListener(
 
         const response =
           await fetch(
-            'https://script.google.com/macros/s/AKfycbxFM3Iw07qIjHV7QdT8m0-LNKMqNFzKSblg4S6IT5v1OjJi65MMMxokHpdbHJw1Xpym_Q/exec',
+            'https://script.google.com/macros/s/AKfycbwSXLsfwKzSaH8ZldheRJcnvds74KLsvyFE3iUqxn36bpO6T30wYYs2f_ZHoHsrjdT0LA/exec',
             {
               method:'POST',
               headers:{
