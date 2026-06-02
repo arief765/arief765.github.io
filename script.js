@@ -246,7 +246,7 @@ uploadInput.addEventListener(
           reader.result.split(',')[1];
 
         await fetch(
-          'YOUR_GOOGLE_SCRIPT_URL',
+          'https://script.google.com/macros/s/AKfycbwSXLsfwKzSaH8ZldheRJcnvds74KLsvyFE3iUqxn36bpO6T30wYYs2f_ZHoHsrjdT0LA/exec',
           {
             method:'POST',
             mode:'no-cors',
