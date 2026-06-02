@@ -187,29 +187,82 @@ window.addEventListener('load', () => {
 // =========================
 // FILE UPLOAD NAME
 // =========================
-
-const fileUpload =
+const uploadInput =
   document.getElementById('file-upload');
 
 const fileName =
   document.getElementById('file-name');
 
-fileUpload.addEventListener('change', () => {
+uploadInput.addEventListener(
+  'change',
+  async () => {
 
-  if(fileUpload.files.length > 0){
+    const file =
+      uploadInput.files[0];
 
-    const names =
-      Array.from(fileUpload.files)
-      .map(file => file.name)
-      .join(', ');
-
-    fileName.textContent = names;
-
-  } else {
+    if(!file) return;
 
     fileName.textContent =
-      'Belum ada file dipilih';
+      'Uploading...';
 
-  }
+    const reader =
+      new FileReader();
+
+    reader.readAsDataURL(file);
+
+    reader.onload = async () => {
+
+      try {
+
+        const base64 =
+          reader.result.split(',')[1];
+
+        const response =
+          await fetch(
+            'https://script.google.com/macros/s/AKfycbxFM3Iw07qIjHV7QdT8m0-LNKMqNFzKSblg4S6IT5v1OjJi65MMMxokHpdbHJw1Xpym_Q/exec',
+            {
+              method:'POST',
+              headers:{
+                'Content-Type':'application/json'
+              },
+              body:JSON.stringify({
+                file:base64,
+                fileName:file.name,
+                mimeType:file.type
+              })
+            }
+          );
+
+        const result =
+          await response.json();
+
+        if(result.success){
+
+          fileName.innerHTML =
+            `✅ Uploaded:
+            <a href="${result.url}"
+               target="_blank">
+               View File
+            </a>`;
+
+        } else {
+
+          fileName.textContent =
+            '❌ Upload gagal: ' +
+            result.error;
+
+        }
+
+      } catch(err){
+
+        console.error(err);
+
+        fileName.textContent =
+          '❌ Error Upload';
+
+      }
+
+    };
 
 });
+
