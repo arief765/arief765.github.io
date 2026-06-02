@@ -188,74 +188,78 @@ window.addEventListener('load', () => {
 // FILE UPLOAD NAME
 // =========================
 const uploadInput =
-  document.getElementById(
-    'file-upload'
-  );
+document.getElementById('file-upload');
 
 const fileName =
-  document.getElementById(
-    'file-name'
-  );
+document.getElementById('file-name');
 
-if(uploadInput){
+uploadInput.addEventListener(
+'change',
+async () => {
 
-  uploadInput.addEventListener(
-    'change',
-    async () => {
+const file =  
+  uploadInput.files[0];  
 
-      const file =
-        uploadInput.files[0];
+if(!file) return;  
 
-      if(!file) return;
+fileName.textContent =  
+  'Uploading...';  
 
-      fileName.innerHTML =
-        '⏳ Uploading...';
+const reader =  
+  new FileReader();  
 
-      const reader =
-        new FileReader();
+reader.readAsDataURL(file);  
 
-      reader.readAsDataURL(file);
+reader.onload = async () => {  
 
-      reader.onload =
-        async () => {
+  try {  
 
-        try{
+    const base64 =  
+      reader.result.split(',')[1];  
 
-          const base64 =
-            reader.result.split(',')[1];
+    const response =  
+      await fetch(  
+        'https://script.google.com/macros/s/AKfycbwSXLsfwKzSaH8ZldheRJcnvds74KLsvyFE3iUqxn36bpO6T30wYYs2f_ZHoHsrjdT0LA/exec',  
+        {  
+          method:'POST',  
+          mode: 'no-cors',  
+          body:JSON.stringify({  
+            file:base64,  
+            fileName:file.name,  
+            mimeType:file.type  
+          })  
+        }  
+      );  
 
-          await fetch(
-            'https://script.google.com/macros/s/AKfycbwSXLsfwKzSaH8ZldheRJcnvds74KLsvyFE3iUqxn36bpO6T30wYYs2f_ZHoHsrjdT0LA/exec',
-            {
-              method:'POST',
-              mode:'no-cors',
-              body:JSON.stringify({
+    const result =  
+      await response.json();  
 
-                file:base64,
+    if(result.success){  
 
-                fileName:file.name,
+      fileName.innerHTML =  
+        `✅ Uploaded:  
+        <a href="${result.url}"  
+           target="_blank">  
+           View File  
+        </a>`;  
 
-                mimeType:file.type
+    } else {  
 
-              })
-            }
-          );
+      fileName.textContent =  
+        '❌ Upload gagal: ' +  
+        result.error;  
 
-          fileName.innerHTML =
-            `✅ Upload berhasil<br>
-             <small>${file.name}</small><br>
-             Silakan cek folder Google Drive`;
+    }  
 
-        }catch(err){
+  } catch(err){  
 
-          console.error(err);
+    console.error(err);  
 
-          fileName.innerHTML =
-            '❌ Upload gagal';
+    fileName.textContent =  
+      '❌ Error Upload';  
 
-        }
+  }  
 
-      };
+};
 
-    }
-  );}
+});
