@@ -788,6 +788,46 @@ footer{
 
 }
 
+/* PASSWORD INPUT */
+
+.upload-password{
+
+  margin-bottom:10px;
+
+}
+
+.upload-password input{
+
+  width:100%;
+
+  max-width:320px;
+
+  padding:14px 18px;
+
+  border:none;
+
+  outline:none;
+
+  border-radius:14px;
+
+  background:#1e293b;
+
+  color:white;
+
+  text-align:center;
+
+  border:1px solid rgba(255,255,255,0.08);
+
+}
+
+.upload-password input::placeholder{
+
+  color:#94a3b8;
+
+}
+
+/* UPLOAD BUTTON */
+
 .upload-btn{
 
   display:inline-flex;
@@ -826,6 +866,46 @@ footer{
   display:none;
 }
 
+/* PROGRESS BAR */
+
+.progress-container{
+
+  width:100%;
+
+  max-width:350px;
+
+  height:12px;
+
+  background:#1e293b;
+
+  border-radius:20px;
+
+  overflow:hidden;
+
+  border:1px solid rgba(255,255,255,0.05);
+
+}
+
+.progress-bar{
+
+  width:0%;
+
+  height:100%;
+
+  border-radius:20px;
+
+  background:linear-gradient(
+    90deg,
+    #0ea5e9,
+    #8b5cf6
+  );
+
+  transition:width .3s ease;
+
+}
+
+/* STATUS */
+
 #file-name{
 
   color:#cbd5e1;
@@ -837,6 +917,22 @@ footer{
   max-width:300px;
 
   word-break:break-word;
+
+}
+
+/* SUCCESS */
+
+.upload-success{
+
+  color:#22c55e;
+
+}
+
+/* ERROR */
+
+.upload-error{
+
+  color:#ef4444;
 
 }
 
