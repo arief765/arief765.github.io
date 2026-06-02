@@ -209,21 +209,36 @@
 
         <!-- UPLOAD FILE -->
 
+<div class="upload-password">
+  <input
+    type="password"
+    id="upload-password"
+    placeholder="Masukkan Access Code">
+</div>
+
 <div class="upload-wrapper">
 
-  <label for="file-upload" class="upload-btn">
+  <label
+    for="file-upload"
+    class="upload-btn">
 
     <i class="fa-solid fa-upload"></i>
-
     Upload File
 
   </label>
 
   <input
     type="file"
-    id="file-upload"
-    multiple
-    accept="*/*">
+    id="file-upload">
+
+  <div class="progress-container">
+
+    <div
+      class="progress-bar"
+      id="progress-bar">
+    </div>
+
+  </div>
 
   <p id="file-name">
     Belum ada file dipilih
