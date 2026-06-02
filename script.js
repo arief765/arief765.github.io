@@ -188,79 +188,74 @@ window.addEventListener('load', () => {
 // FILE UPLOAD NAME
 // =========================
 const uploadInput =
-  document.getElementById('file-upload');
+  document.getElementById(
+    'file-upload'
+  );
 
 const fileName =
-  document.getElementById('file-name');
+  document.getElementById(
+    'file-name'
+  );
 
-uploadInput.addEventListener(
-  'change',
-  async () => {
+if(uploadInput){
 
-    const file =
-      uploadInput.files[0];
+  uploadInput.addEventListener(
+    'change',
+    async () => {
 
-    if(!file) return;
+      const file =
+        uploadInput.files[0];
 
-    fileName.textContent =
-      'Uploading...';
+      if(!file) return;
 
-    const reader =
-      new FileReader();
+      fileName.innerHTML =
+        '⏳ Uploading...';
 
-    reader.readAsDataURL(file);
+      const reader =
+        new FileReader();
 
-    reader.onload = async () => {
+      reader.readAsDataURL(file);
 
-      try {
+      reader.onload =
+        async () => {
 
-        const base64 =
-          reader.result.split(',')[1];
+        try{
 
-        const response =
+          const base64 =
+            reader.result.split(',')[1];
+
           await fetch(
             'https://script.google.com/macros/s/AKfycbwSXLsfwKzSaH8ZldheRJcnvds74KLsvyFE3iUqxn36bpO6T30wYYs2f_ZHoHsrjdT0LA/exec',
             {
               method:'POST',
-              mode: 'no-cors',
+              mode:'no-cors',
               body:JSON.stringify({
+
                 file:base64,
+
                 fileName:file.name,
+
                 mimeType:file.type
+
               })
             }
           );
 
-        const result =
-          await response.json();
+          fileName.innerHTML =
+            `✅ Upload berhasil<br>
+             <small>${file.name}</small><br>
+             Silakan cek folder Google Drive`;
 
-        if(result.success){
+        }catch(err){
+
+          console.error(err);
 
           fileName.innerHTML =
-            `✅ Uploaded:
-            <a href="${result.url}"
-               target="_blank">
-               View File
-            </a>`;
-
-        } else {
-
-          fileName.textContent =
-            '❌ Upload gagal: ' +
-            result.error;
+            '❌ Upload gagal';
 
         }
 
-      } catch(err){
+      };
 
-        console.error(err);
-
-        fileName.textContent =
-          '❌ Error Upload';
-
-      }
-
-    };
-
-});
-
+    }
+  );
