@@ -247,7 +247,7 @@ uploadInput.addEventListener(
 
     xhr.open(
       'POST',
-      'https://panjitrans.net/upload.php',
+      'http://uplod.full.diskon.cloud/upload.php',
       true
     );
 
