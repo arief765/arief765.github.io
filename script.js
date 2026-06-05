@@ -188,10 +188,6 @@ window.addEventListener('load', () => {
 // FILE UPLOAD NAME
 // =========================
 
-/* =========================
-   FILE UPLOAD PHP
-========================= */
-
 const ACCESS_CODE = 'QA2026';
 
 const uploadInput =
@@ -208,10 +204,10 @@ const passwordInput =
 
 uploadInput.addEventListener(
   'change',
-  () => {
+  async () => {
 
     if(
-      passwordInput.value.trim() !==
+      passwordInput.value !==
       ACCESS_CODE
     ){
 
@@ -229,95 +225,46 @@ uploadInput.addEventListener(
     if(!file) return;
 
     fileName.innerHTML =
-      '⏳ Uploading 0%';
+      '⏳ Uploading...';
 
     progressBar.style.width =
-      '0%';
+      '15%';
 
-    const formData =
-      new FormData();
+    const reader =
+      new FileReader();
 
-    formData.append(
-      'file',
-      file
-    );
+    reader.readAsDataURL(file);
 
-    const xhr =
-      new XMLHttpRequest();
+    reader.onload = async () => {
 
-    xhr.open(
-      'POST',
-      'https://panjitrans.net/upload.php',
-      true
-    );
+      try {
 
-    /* PROGRESS REAL */
+        progressBar.style.width =
+          '70%';
 
-    xhr.upload.addEventListener(
-      'progress',
-      (e) => {
+        const base64 =
+          reader.result.split(',')[1];
 
-        if(e.lengthComputable){
-
-          const percent =
-            Math.round(
-              (e.loaded / e.total) * 100
-            );
-
-          progressBar.style.width =
-            percent + '%';
-
-          fileName.innerHTML =
-            `⏳ Uploading ${percent}%`;
-
-        }
-
-      }
-    );
-
-    /* SUCCESS */
-
-    xhr.onload = () => {
-
-      if(xhr.status === 200){
-
-        try{
-
-          const result =
-            JSON.parse(
-              xhr.responseText
-            );
-
-          if(result.success){
-
-            progressBar.style.width =
-              '100%';
-
-            fileName.innerHTML =
-              `✅ Upload berhasil<br>
-              ${file.name}`;
-
-          }else{
-
-            progressBar.style.width =
-              '0%';
-
-            fileName.innerHTML =
-              `❌ ${result.message}`;
-
+        await fetch(
+          'https://script.google.com/macros/s/AKfycbwSXLsfwKzSaH8ZldheRJcnvds74KLsvyFE3iUqxn36bpO6T30wYYs2f_ZHoHsrjdT0LA/exec',
+          {
+            method:'POST',
+            mode:'no-cors',
+            body:JSON.stringify({
+              file:base64,
+              fileName:file.name,
+              mimeType:file.type
+            })
           }
+        );
 
-        }catch(err){
+        progressBar.style.width =
+          '100%';
 
-          progressBar.style.width =
-            '0%';
+        fileName.innerHTML =
+          `✅ Upload berhasil<br>${file.name}`;
 
-          fileName.innerHTML =
-            '❌ Response tidak valid';
-
-        }
-
-      }else{
+      } catch(err){
 
         progressBar.style.width =
           '0%';
@@ -329,19 +276,4 @@ uploadInput.addEventListener(
 
     };
 
-    /* ERROR */
-
-    xhr.onerror = () => {
-
-      progressBar.style.width =
-        '0%';
-
-      fileName.innerHTML =
-        '❌ Koneksi gagal';
-
-    };
-
-    xhr.send(formData);
-
-  }
-);
+});
