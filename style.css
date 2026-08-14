@@ -691,6 +691,10 @@ section{
 /* ==========================================
    PERSONAL MESSAGE
 ========================================== */
+.message-page {
+    min-height: 80vh;
+    padding: 80px 0;
+}
 
 .message-card {
   max-width: 800px;
