@@ -3,10 +3,10 @@
 // ==========================================
 
 const SUPABASE_URL =
-    "YOUR_SUPABASE_URL";
+    "https://wvllisghhvhjcnqzshrb.supabase.co";
 
 const SUPABASE_PUBLISHABLE_KEY =
-    "YOUR_SUPABASE_PUBLISHABLE_KEY";
+    "sb_publishable_ecElDx9cB-VpaPPBMq4_PA_8lVfWHm-";
 
 
 const supabaseClient =
