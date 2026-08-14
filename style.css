@@ -1151,3 +1151,47 @@ footer{
   }
 
   }
+
+/* ==========================================
+   MESSAGE PAGE MOBILE NAVBAR
+========================================== */
+
+@media (max-width: 768px) {
+
+  .message-navbar .nav-links {
+
+    position: static;
+
+    display: flex;
+
+    width: auto;
+
+    background: transparent;
+
+    border: none;
+
+    border-radius: 0;
+
+    padding: 0;
+
+    flex-direction: row;
+
+    gap: 10px;
+
+    box-shadow: none;
+
+  }
+
+  .message-navbar .nav-links a {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 6px;
+
+    font-size: 14px;
+
+  }
+
+     }
