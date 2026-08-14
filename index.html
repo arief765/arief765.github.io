@@ -110,12 +110,6 @@
       </li>
 
       <li>
-        <a href="#message">
-          Message
-        </a>
-      </li>
-
-      <li>
         <a href="#contact">
           Contact
         </a>
@@ -571,146 +565,6 @@
 
 </section>
 
-<!-- MESSAGE -->
-
-<section id="message">
-
-  <div class="container">
-
-    <h2 class="section-title">
-      Personal Message
-    </h2>
-
-    <!-- LOGIN -->
-
-    <div
-      class="card message-card"
-      id="login-card">
-
-      <h3>
-        Admin Login
-      </h3>
-
-      <p>
-        Login untuk mengelola personal message.
-      </p>
-
-      <input
-        type="email"
-        id="login-email"
-        class="message-input"
-        placeholder="Email">
-
-      <input
-        type="password"
-        id="login-password"
-        class="message-input"
-        placeholder="Password">
-
-      <button
-        type="button"
-        class="btn btn-primary"
-        id="login-btn">
-
-        <i class="fa-solid fa-right-to-bracket"></i>
-        Login
-
-      </button>
-
-      <p
-        id="login-status"
-        class="message-status">
-      </p>
-
-    </div>
-
-
-    <!-- MESSAGE MANAGEMENT -->
-
-    <div
-      class="card message-card"
-      id="message-card"
-      style="display:none;">
-
-      <div class="message-header">
-
-        <div>
-
-          <h3>
-            Personal Message
-          </h3>
-
-          <p id="logged-user"></p>
-
-        </div>
-
-        <button
-          type="button"
-          class="btn btn-danger"
-          id="logout-btn">
-
-          <i class="fa-solid fa-right-from-bracket"></i>
-          Logout
-
-        </button>
-
-      </div>
-
-
-      <textarea
-        id="message-text"
-        class="message-input"
-        rows="8"
-        placeholder="Tulis message di sini...">
-      </textarea>
-
-
-      <div class="message-actions">
-
-        <button
-          type="button"
-          class="btn btn-primary"
-          id="save-message-btn">
-
-          <i class="fa-solid fa-floppy-disk"></i>
-          Save
-
-        </button>
-
-        <button
-          type="button"
-          class="btn btn-danger"
-          id="delete-message-btn">
-
-          <i class="fa-solid fa-trash"></i>
-          Delete
-
-        </button>
-
-        <button
-    type="button"
-    class="btn btn-outline"
-    onclick="refreshMessage()">
-
-    <i class="fa-solid fa-arrows-rotate"></i>
-    Refresh
-
-        </button>
-
-      </div>
-
-
-      <p
-        id="message-status"
-        class="message-status">
-      </p>
-
-    </div>
-
-  </div>
-
-</section>
-
   <!-- CONTACT -->
 
   <section id="contact">
@@ -787,8 +641,7 @@
 
   <!-- SCRIPT -->
 
-  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-<script src="script.js"></script>
+  <script src="script.js"></script>
 
 </body>
 
