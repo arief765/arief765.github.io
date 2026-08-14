@@ -440,6 +440,19 @@ async function loadMessage() {
 
 }
 
+// ==========================================
+// REFRESH MESSAGE
+// ==========================================
+
+async function refreshMessage() {
+
+    await loadMessage();
+
+    showMessageStatus(
+        "Message berhasil diperbarui."
+    );
+
+}
 
 // ==========================================
 // SAVE MESSAGE
